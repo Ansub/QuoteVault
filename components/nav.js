@@ -8,7 +8,7 @@ export default function Nav() {
   const [user, loading] = useAuthState(auth)
   return (
     <nav className="flex justify-between items-center py-10">
-      <Link href={"/"}>
+      <Link href={user ? "/home" : "/"}>
         <Image
           src="/images/logo.svg"
           width={50}
@@ -31,7 +31,7 @@ export default function Nav() {
               className="py-2 text-sm bg-[#CC6510] text-white rounded px-6 transition-all ease-linear duration-300 hover:bg-black"
               href={"/post"}
             >
-              Posts
+              New Post
             </Link>
             <button
               className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded transition-all ease-linear duration-300 hover:bg-black"

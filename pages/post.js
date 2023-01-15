@@ -42,7 +42,7 @@ export default function Post() {
       const docRef = doc(db, "posts", post.id)
       const updatedPost = { ...post, timestamp: serverTimestamp() }
       await updateDoc(docRef, updatedPost)
-      return router.push("/")
+      return router.push("/home")
     } else {
       // make a new post if post doesn't have id
       const collectionRef = collection(db, "posts")
@@ -58,7 +58,7 @@ export default function Post() {
         position: toast.POSITION.TOP_CENTER,
         autoClose: 2000,
       })
-      return router.push("/")
+      return router.push("/home")
     }
   }
 

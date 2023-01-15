@@ -20,7 +20,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user) {
-      route.push("/")
+      route.push("/home")
     } else {
     }
   }, [user])

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Message({ children, avatar, username, description }) {
   return (
-    <div className="bg-white text-center p-8 border-b-2 rounded-lg mb-5">
+    <div className="bg-white flex flex-col items-center justify-center text-center p-8 border-b-2 rounded-lg mb-5">
       <div className="flex items-center gap-2"></div>
       <div className="py-4 mb-5">
         <p className="font-light font-serif">{description}</p>
@@ -18,7 +18,9 @@ export default function Message({ children, avatar, username, description }) {
           ></Image>
           <h2 className="text-sm">{username}</h2>
         </div>
-        <div className="w-1/2">{children}</div>
+        <div className="w-full flex items-center justify-center">
+          {children}
+        </div>
       </div>
     </div>
   )
