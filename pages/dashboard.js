@@ -20,7 +20,6 @@ export default function Dashboard() {
   const router = useRouter()
   const [user, loading] = useAuthState(auth)
   const [posts, setPosts] = useState([])
-  console.log(user, "user")
 
   // see if user is logged in
   const getData = async () => {
@@ -59,16 +58,10 @@ export default function Dashboard() {
     <div>
       <div className="flex items-center gap-5">
         <h1 className="text-xl font-medium">Your Posts</h1>
-        <button
-          className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded"
-          onClick={() => auth.signOut()}
-        >
-          Sign Out
-        </button>
       </div>
       {posts.map((post) => (
         <Message key={post.id} {...post}>
-          <div className="flex gap-4">
+          <div className="flex gap-4 w-full items-center justify-center mt-2">
             <Link href={{ pathname: "/post", query: post }}>
               <button className="text-teal-600 flex items-center justify-items-center gap-2 py-2 text-sm">
                 <AiFillEdit className="text-2xl" />

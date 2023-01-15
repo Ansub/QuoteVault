@@ -61,33 +61,31 @@ export default function PostDetails() {
     getComments()
   }, [router.isReady])
 
-  console.log("allMessages", allMessages)
-
   return (
     <div>
       <Message {...routerData}>
         <div className="my-4">
-          <div className="flex flex-col">
-            <div className="flex">
+          <div className="">
+            <div className="flex mt-10">
               <input
                 onChange={(e) => setMessage(e.target.value)}
                 type="text"
                 value={message}
                 placeholder="send a message"
-                className="bg-gray-800 w-full p-2 text-white text-sm"
+                className="bg-[#fef8ee] w-full p-2 text-black text-sm"
               />
               <button
                 onClick={submitMessage}
-                className="bg-cyan-500 text-white py-2 px-4 text-sm"
+                className="bg-[#CC6510] text-white py-2 px-4 text-sm"
               >
                 Submit
               </button>
             </div>
-            <div className="py-6">
-              <h2 className="font-bold"> Comments</h2>
+            <div className="py-6 mt-10">
+              <h2 className="font-bold text-left"> Comments</h2>
               {allMessages?.map((message) => (
                 <div key={message.id} className="flex items-center gap-2 py-4">
-                  <div>
+                  <div className="w-8">
                     <Image
                       width={40}
                       height={40}
@@ -97,7 +95,7 @@ export default function PostDetails() {
                     />
                     <h2>{message.userName}</h2>
                   </div>
-                  <p>{message.message}</p>
+                  <div className="text-sm">{message.message}</div>
                 </div>
               ))}
             </div>

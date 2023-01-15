@@ -6,10 +6,9 @@ import { useRouter } from "next/router"
 export default function Nav() {
   const router = useRouter()
   const [user, loading] = useAuthState(auth)
-  console.log(user)
   return (
     <nav className="flex justify-between items-center py-10">
-      <Link href={router.pathname === "/auth/login" ? "/auth/login" : "/"}>
+      <Link href={"/"}>
         <Image
           src="/images/logo.svg"
           width={50}
@@ -29,11 +28,17 @@ export default function Nav() {
         {user && (
           <div className="flex items-center gap-1">
             <Link
-              className="py-2 px-4 text-sm bg-[#CC6510] text-white rounded-sm font-medium"
+              className="py-2 text-sm bg-[#CC6510] text-white rounded px-6 transition-all fade-in-out duration-100 hover:bg-black"
               href={"/post"}
             >
               Posts
             </Link>
+            <button
+              className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded"
+              onClick={() => auth.signOut()}
+            >
+              Sign Out
+            </button>
             <Link
               className="py-2 px-4 text-sm text-black rounded-lg font-medium"
               href={"/dashboard"}
