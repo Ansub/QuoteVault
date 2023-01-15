@@ -28,13 +28,13 @@ export default function Nav() {
         {user && (
           <div className="flex items-center gap-1">
             <Link
-              className="py-2 text-sm bg-[#CC6510] text-white rounded px-6 transition-all fade-in-out duration-100 hover:bg-black"
+              className="py-2 text-sm bg-[#CC6510] text-white rounded px-6 transition-all ease-linear duration-300 hover:bg-black"
               href={"/post"}
             >
               Posts
             </Link>
             <button
-              className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded"
+              className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded transition-all ease-linear duration-300 hover:bg-black"
               onClick={() => auth.signOut()}
             >
               Sign Out
