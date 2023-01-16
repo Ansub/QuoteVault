@@ -1,8 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { BiLogInCircle } from "react-icons/bi"
+import { useAuthState } from "react-firebase-hooks/auth"
+import { useEffect } from "react"
+import { useRouter } from "next/router"
+import { auth } from "../utils/firebase"
 
 export default function Mainpage() {
+  const [user, loading] = useAuthState(auth)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (user) {
+      router.push("/home")
+    } else {
+    }
+  }, [user, loading])
+
   return (
     <div className="text-red flex items-center justify-between h-[calc(100vh-200px)] p-5">
       <div>

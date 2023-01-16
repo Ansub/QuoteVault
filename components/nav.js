@@ -35,7 +35,7 @@ export default function Nav() {
             </Link>
             <button
               className="my-6 text-white text-sm bg-[#CC6510] py-2 px-4 rounded transition-all ease-linear duration-300 hover:bg-black"
-              onClick={() => auth.signOut()}
+              onClick={() => auth.signOut() && router.push("/")}
             >
               Sign Out
             </button>
