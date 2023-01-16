@@ -18,10 +18,12 @@ export default function Mainpage() {
   }, [user, loading])
 
   return (
-    <div className="text-red flex items-center justify-between h-[calc(100vh-200px)] p-5">
+    <div className="text-red flex flex-col md:flex-row items-center justify-between h-[calc(100vh-200px)] p-5">
       <div>
-        <div className="font-serif font-bold text-6xl mb-10">Quote Vault</div>
-        <div className="mb-10 text-md w-[500px]">
+        <div className="font-serif font-bold text-5xl md:text-6xl mb-5 md:mb-10">
+          Quote Vault
+        </div>
+        <div className="mb-5 md:mb-10 text-md w-full md:w-[500px]">
           {` A social media platform where users can share their favorite quotes and discover new ones. Whether you're looking for inspiration, motivation, or just something to brighten your day, Quote Vault has it all.`}
         </div>
         <Link href="/auth/login">

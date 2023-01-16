@@ -34,7 +34,7 @@ export default function Login() {
         height={100}
         alt={"Logo"}
       />
-      <h1 className="text-4xl font-bold mt-5 font-serif">
+      <h1 className="text-4xl text-center font-bold mt-5 font-serif">
         Welcome To Quote Vault
       </h1>
       <p className="pt-5">Elevate your thoughts, Inspire the world.</p>

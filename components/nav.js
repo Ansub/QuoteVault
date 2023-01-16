@@ -28,7 +28,7 @@ export default function Nav() {
         {user && (
           <div className="flex items-center gap-1">
             <Link
-              className="py-2 text-sm bg-[#CC6510] text-white rounded px-6 transition-all ease-linear duration-300 hover:bg-black"
+              className="py-2 text-sm bg-[#CC6510] text-white rounded px-4 md:px-6 transition-all ease-linear duration-300 hover:bg-black"
               href={"/post"}
             >
               New Post
